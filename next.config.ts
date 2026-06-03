@@ -1,7 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.lacostena.com.mx",
+        pathname: "/media/uploads/Logos/**",
+      },
+      {
+        protocol: "https",
+        hostname:"i5.walmartimages.com.mx"
+      }
+    ],
+  },
 };
 
 export default nextConfig;

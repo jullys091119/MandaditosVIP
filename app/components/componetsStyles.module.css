@@ -1,0 +1,92 @@
+.header {
+  background: linear-gradient(
+    to bottom,
+    #24472b 1%,
+    rgba(36, 71, 43, 0.8) 90%,
+    rgba(134, 207, 148, 0) 100%
+  );
+  height: 200px;
+}
+
+.containerInput {
+  padding: 20px 0;
+  display: flex;
+}
+
+.badge {
+  background-color: white;
+  display: flex;
+  padding: 10px;
+  border-radius: 40px;
+  gap: 5px;
+  align-items: center;
+}
+
+.welcome {
+  color: white;
+}
+
+.iconStore {
+  width: 100px !important;
+  height: 160px !important;
+}
+.price {
+  color: #24472b;
+}
+
+.circleMinusQuantity {
+  background-color: #e3f3e6;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  font-size: 10px !important;
+  padding: 5px;
+}
+
+.imgCar {
+  height: 150px !important;
+  width: 100% !important;
+  object-fit: contain !important;
+}
+
+.imgList {
+  height: 100px !important;
+  width: 100% !important;
+  object-fit: contain !important;
+}
+
+.circlePlusQuantity {
+  background-color: #43b152;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  font-size: 10px !important;
+  padding: 5px;
+}
+.paperSales {
+  max-width: 100%;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.priceCar,
+.total {
+  font-weight: 900;
+}
+.nameCar {
+  font-weight: 600;
+}
+.total {
+  padding: 10px 0;
+}
+
+.popoverContent {
+  max-height: 800px;
+  overflow-y: auto;
+}
+.inputNumber {
+  margin: 30px 0;
+}
+.change {
+  margin-top: 20px;
+}
