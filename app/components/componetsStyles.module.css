@@ -1,11 +1,12 @@
 .header {
-  background: linear-gradient(
-    to bottom,
-    #24472b 1%,
-    rgba(36, 71, 43, 0.8) 90%,
-    rgba(134, 207, 148, 0) 100%
-  );
-  height: 200px;
+    background: linear-gradient(#24472b 1%
+1%
+, #24472bcc 90%, #86cf9400 100%);
+    height: 200px;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 10000000;
 }
 
 .containerInput {
@@ -44,9 +45,9 @@
 }
 
 .imgCar {
-  height: 150px !important;
-  width: 100% !important;
-  object-fit: contain !important;
+    object-fit: contain !important;
+    width: 48% !important;
+    height: 88px !important;
 }
 
 .imgList {
@@ -81,8 +82,9 @@
 }
 
 .popoverContent {
-  max-height: 800px;
+  max-height: 700px !important;
   overflow-y: auto;
+  z-index: 100000000000 !important;
 }
 .inputNumber {
   margin: 30px 0;

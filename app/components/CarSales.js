@@ -80,7 +80,7 @@ function CarSales({ opened, children, product, setQuantity }) {
       trapFocus={false}
       withArrow
       shadow="md"
-      width="97%"
+      width="89%"
     >
       <Popover.Target>{children}</Popover.Target>
 
@@ -98,8 +98,8 @@ function CarSales({ opened, children, product, setQuantity }) {
                     <Image
                       src={p.img_url}
                       alt={p.name}
-                      width={110}
-                      height={100}
+                      width={60}
+                      height={60}
                       className={styles.imgCar}
                     />
                     <Box>
