@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import AppContext from "../context/carContext";
-import CardPopular from "@/app/components/CardPopular";
+import CardPopular from "./CardPopular";
 import { SimpleGrid } from "@mantine/core";
 
 function PopularProducts() {

@@ -4,7 +4,7 @@ import AppContext from "../context/carContext";
 import styles from "../components/componetsStyles.module.css";
 import { Flex, Box, Image, Avatar, Text, Title } from "@mantine/core";
 import headerImg from "@/app/img/headerimg.jpeg";
-import BadgeCar from "@/app/components/BudgeCar";
+import BadgeCar from "./BudgeCar";
 import logo2 from "@/app/img/logo2.png";
 
 function HeaderHome({ product }) {

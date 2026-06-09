@@ -1,13 +1,13 @@
 "use client";
 import { useContext } from "react";
 import AppContext from "./context/carContext";
-import categories from "@/app/categories";
-import HeaderHome from "@/app/components/HeaderHome";
+import categories from "./categories";
+import HeaderHome from "./components/HeaderHome";
 import { Container, Flex, TextInput, Text, Box } from "@mantine/core";
 import styles from "@/app/components/componetsStyles.module.css";
-import CardCategories from "@/app/components/CardCategories";
-import PopularProduct from "@/app/components/PopularProducts";
-import CarSales from "@/app/components/CarSales";
+import CardCategories from "./components/CardCategories";
+import PopularProduct from "./components/PopularProducts";
+import CarSales from "./components/CarSales";
 import {
   Car,
   FadersHorizontalIcon,
