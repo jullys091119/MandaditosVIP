@@ -7,18 +7,16 @@ import { Container, Flex, TextInput, Text, Box } from "@mantine/core";
 import styles from "@/app/components/componetsStyles.module.css";
 import CardCategories from "./components/CardCategories";
 import PopularProduct from "./components/PopularProducts";
-import CarSales from "./components/CarSales";
+import BackIcon from "./components/BackIcon"
 import {
-  Car,
   FadersHorizontalIcon,
-  MagnifyingGlassIcon,
 } from "@phosphor-icons/react";
 
 export default function Home() {
   const { product } = useContext(AppContext);
 
   return (
-    <div>
+    <div style={{ minHeight: "100vh", position: "relative" }}>
       <HeaderHome product={product} />
       <Container fluid>
         <Flex className={[styles.containerInput, "gap-4 mb-4 mt-10"]}>
@@ -56,6 +54,7 @@ export default function Home() {
           </Flex>
         </Box>
       </Container>
+      <BackIcon />
     </div>
   );
 }

@@ -46,8 +46,8 @@
 
 .imgCar {
     object-fit: contain !important;
-    width: 48% !important;
-    height: 88px !important;
+    width: 19% !important;
+    height: 54px !important;
 }
 
 .imgList {
@@ -82,9 +82,12 @@
 }
 
 .popoverContent {
-  max-height: 700px !important;
-  overflow-y: auto;
-  z-index: 100000000000 !important;
+      overflow-y: auto;
+    z-index: 2147483647 !important;
+    max-height: 700px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .inputNumber {
   margin: 30px 0;

@@ -1,6 +1,4 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
-import AppContext from "../context/carContext";
 import styles from "../components/componetsStyles.module.css";
 import { Flex, Box, Image, Avatar, Text, Title } from "@mantine/core";
 import headerImg from "@/app/img/headerimg.jpeg";
