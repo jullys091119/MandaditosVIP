@@ -1,14 +1,28 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect,useState } from "react";
 import AppContext from "../context/carContext";
 import CardPopular from "./CardPopular";
 import { SimpleGrid } from "@mantine/core";
+import { showPopularProducts } from "../products";
 
 function PopularProducts() {
   const { allSale = [], handleSaveProducts } = useContext(AppContext);
+  const [dataPopular, setDataPopular] = useState([]);
 
-  const salesFlat = Array.isArray(allSale) ? allSale.flat() : [];
+   useEffect(()=>{
+    const loadPopularProducts = async () => {
+      const popularProducts = await showPopularProducts();
+      setDataPopular(popularProducts);
+    }
+
+    loadPopularProducts();
+   
+   },[])
+
+
+
+  const salesFlat = Array.isArray(dataPopular) ? dataPopular.flat() : [];
 
   const grouped = salesFlat.reduce((acc, item) => {
     const exists = acc.find((p) => p.code === item.code);

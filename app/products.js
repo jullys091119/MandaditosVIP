@@ -5,9 +5,8 @@ let id = null;
 export async function getProducts() {
   const { data, error } = await supabase.from("products").select("*");
 
-
-console.log('data', data)
-console.log('error', error)
+  console.log("data", data);
+  console.log("error", error);
   if (error || !data) {
     return products;
   } else {
@@ -36,7 +35,7 @@ export async function setProducts(total, name, address) {
 }
 
 export async function setItemsProducts(items) {
-  return await supabase.from("sale_items").insert(
+  await supabase.from("sale_items").insert(
     items.map((p) => ({
       sale_id: id,
       code: p.code,
@@ -46,3 +45,13 @@ export async function setItemsProducts(items) {
     })),
   );
 }
+
+export async function showPopularProducts() {
+  const { data, error } = await supabase.from("sale_items").select("*");
+  if (error || !data) {
+    console.log("error al obtener productos populares", error);
+  } else {
+    return data;
+  }
+}
+
