@@ -82,9 +82,9 @@
 }
 
 .popoverContent {
-      overflow-y: auto;
+    overflow-y: auto;
     z-index: 2147483647 !important;
-    max-height: 700px !important;
+    max-height: 60vh !important;
     display: flex;
     flex-direction: column;
     gap: 10px;
