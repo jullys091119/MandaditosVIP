@@ -7,7 +7,6 @@ import { Container, Flex, TextInput, Text, Box } from "@mantine/core";
 import styles from "@/app/components/componetsStyles.module.css";
 import CardCategories from "./components/CardCategories";
 import PopularProduct from "./components/PopularProducts";
-import BackIcon from "./components/BackIcon"
 import {
   FadersHorizontalIcon,
 } from "@phosphor-icons/react";
@@ -54,7 +53,6 @@ export default function Home() {
           </Flex>
         </Box>
       </Container>
-      <BackIcon />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Flex, Box, Image, Avatar, Text, Title } from "@mantine/core";
 import headerImg from "@/app/img/headerimg.jpeg";
 import BadgeCar from "./BudgeCar";
 import logo2 from "@/app/img/logo2.png";
+import BackIcon from "./BackIcon";
 
 function HeaderHome({ product }) {
   
@@ -15,22 +16,9 @@ function HeaderHome({ product }) {
         justify="space-between"
         className="px-3 py-4"
       >
-        <Flex align="center" gap={10}>
-          <Avatar size="md">
-            {<Image src={headerImg.src} width={10} height={10} />}
-          </Avatar>
-          <Flex direction="column">
-            <Text className={styles.welcome} fw={900}>
-              Buenos días.
-            </Text>
-            <Text className={styles.welcome} fw={400}>
-              ¿Qué quieres comprar hoy ?.
-            </Text>
-          </Flex>
-        </Flex>
+      <BackIcon />
         <BadgeCar product={product} />
       </Flex>
-
       <Flex justify="flex-end" align="center" gap={30}>
         <Title style={{ color: "White", marginBottom: 60 }}>Mandadi-Top</Title>
         <Image src={logo2.src} alt="pic tienda" className={styles.iconStore} />

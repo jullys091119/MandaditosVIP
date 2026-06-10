@@ -88,7 +88,6 @@ export default function productList({ id }) {
           })}
         </SimpleGrid>
       </Box>
-      <BackIcon />
     </Container>
   );
 }
