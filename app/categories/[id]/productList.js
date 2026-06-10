@@ -10,6 +10,7 @@ import { PlusCircleIcon, MinusCircleIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import HeaderHome from "../../components/HeaderHome";
 import { getProducts } from "../../products";
+import BackIcon from "../../components/BackIcon"
 export default function productList({ id }) {
   const {
     setItems,
@@ -39,55 +40,55 @@ export default function productList({ id }) {
 
   const filteredProducts = data?.filter((p) => p.categoryId == id);
   return (
-    <Container fluid className="px-0" style={{ padding: 0 }}>
+    <Container fluid className="px-0" style={{ padding: 0, position: "relative" }}>
       <HeaderHome product={product} />
+      <Box className="px-2">
+        <SimpleGrid
+          cols={2}
+          className="flex mt-2 py-10"
 
-      <SimpleGrid
-        cols={2}
-        spacing="lg"
-        className="relative mt-10 justify-center"
-        style={{ padding: "0 17px" }}
-      >
-        {filteredProducts?.map((p, i) => {
-          return (
-            <Card
-              shadow="sm"
-              padding="xl"
-              component="a"
-              h={190}
-              w={180}
-              withBorder
-              key={i}
-            >
-              <Card.Section>
-                <Image
-                  src={p.img_url}
-                  width={100}
-                  height={100}
-                  className={styles.imgList}
-                  alt="picure product"
+        >
+          {filteredProducts?.map((p, i) => {
+            return (
+              <Card
+                shadow="sm"
+                padding="xl"
+                component="a"
+                style={{ maxWidth: 200, maxHeight: 200 }}
+                withBorder
+                key={i}
+              >
+                <Card.Section>
+                  <Image
+                    src={p.img_url}
+                    width={100}
+                    height={100}
+                    className={styles.imgList}
+                    alt="picure product"
+                  />
+                </Card.Section>
+                <Text fw={500} size="lg" mt="md">
+                  {p?.name.length > 9 ? p?.name.slice(0, 9) + "..." : p?.name}
+                </Text>
+                <Text fw={900} className={styles.price}>
+                  $ {p.price}.00
+                </Text>
+
+                <PlusCircleIcon
+                  size={42}
+                  color="#24472b"
+                  className="absolute bottom-3 right-1"
+                  onClick={() => {
+                    handleSaveProducts(p.code);
+                  }}
                 />
-              </Card.Section>
-              <Text fw={500} size="lg" mt="md">
-                {p?.name.length > 10 ? p?.name.slice(0, 10) + "..." : p?.name}
-              </Text>
-              <Text fw={900} className={styles.price}>
-                $ {p.price}.00
-              </Text>
-
-              <PlusCircleIcon
-                size={42}
-                color="#24472b"
-                className="absolute bottom-3 right-1"
-                onClick={() => {
-                  handleSaveProducts(p.code);
-                }}
-              />
-            </Card>
-          );
-          <p>{p.quantity}</p>;
-        })}
-      </SimpleGrid>
+              </Card>
+            );
+            <p>{p.quantity}</p>;
+          })}
+        </SimpleGrid>
+      </Box>
+      <BackIcon />
     </Container>
   );
 }
