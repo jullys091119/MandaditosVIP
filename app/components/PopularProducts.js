@@ -1,32 +1,32 @@
 "use client";
 
-import { useContext, useEffect,useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AppContext from "../context/carContext";
 import CardPopular from "./CardPopular";
 import { SimpleGrid } from "@mantine/core";
-import { showPopularProducts } from "../products";
+import { showPopularProducts, getProducts } from "../products";
 
 function PopularProducts() {
   const { allSale = [], handleSaveProducts } = useContext(AppContext);
   const [dataPopular, setDataPopular] = useState([]);
+  const [img, setImg] = useState("")
 
-   useEffect(()=>{
+  useEffect(() => {
     const loadPopularProducts = async () => {
       const popularProducts = await showPopularProducts();
+      const currentImg = await getProducts()
+      setImg(currentImg)
       setDataPopular(popularProducts);
     }
 
     loadPopularProducts();
-   
-   },[])
 
-
+  }, [])
 
   const salesFlat = Array.isArray(dataPopular) ? dataPopular.flat() : [];
-
-  const grouped = salesFlat.reduce((acc, item) => {
-    const exists = acc.find((p) => p.code === item.code);
-
+   const grouped = salesFlat.reduce((acc, item) => {
+   const exists = acc.find((p) => p.code === item.code);
+   const  data  = img.find(i=> i.code === item.code)
     if (exists) {
       exists.total += item.quantity;
     } else {
@@ -35,6 +35,7 @@ function PopularProducts() {
         name: item.name,
         price: item.price,
         total: item.quantity,
+        img: data?.img_url
       });
     }
 

@@ -61,8 +61,8 @@ export default function productList({ id }) {
                 <Card.Section>
                   <Image
                     src={p.img_url}
-                    width={100}
-                    height={100}
+                    width={10}
+                    height={10}
                     className={styles.imgList}
                     alt="picure product"
                   />
