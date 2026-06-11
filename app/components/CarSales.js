@@ -55,7 +55,6 @@ function CarSales({ opened, children, product, setQuantity }) {
       ].join("\n");
 
       await setProducts(total, "julian", data?.address);
-      console.log(product, "product");
       await setItemsProducts(product);
 
       const url = `https://wa.me/526692396324?text=${encodeURIComponent(
@@ -76,11 +75,12 @@ function CarSales({ opened, children, product, setQuantity }) {
     <Popover
       opened={opened}
       onClose={() => setOpened(false)}
-      closeOnClickOutside
+      closeOnClickOutside={false}
       trapFocus={false}
-      withArrow
+      withinPortal={true} // Asegura que se renderice sobre cualquier otra capa
       shadow="md"
       width="89%"
+      position="bottom"
     >
       <Popover.Target>{children}</Popover.Target>
 

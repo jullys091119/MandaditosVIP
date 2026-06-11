@@ -2,23 +2,24 @@ import { Card, Image, Text } from "@mantine/core";
 import styles from "@/app/components/componetsStyles.module.css";
 import { PlusCircleIcon } from "@phosphor-icons/react";
 
-function CardPopular({ product, handleSaveProducts }) {
+function CardPopular({ product, handleSaveProducts, img }) {
   if (!product?.code) return null;
 
   return (
-    <Card shadow="sm" padding="xl" h={190} w={180} withBorder>
-      <Card.Section>
+    <Card shadow="sm" padding="xl"  withBorder style={{display: "flex", justifyContent: "center", alignItems: "center"}} >
+      <Card.Section className="flex column align-center">
         <Image
-          src="https://www.proquimsadesaltillo.com.mx/assets/imagenes/_LIMPIADORES_MARCA_ENSUE%C3%91O.jpg"
-          h={100}
+          src={product?.img || img}
+          h={70}
+          w={60}
           alt={product?.name || "product"}
           fit="contain"
         />
       </Card.Section>
 
       <Text fw={500} size="lg" mt="md">
-        {product?.name?.length > 10
-          ? product.name.slice(0, 10) + "..."
+        {product?.name?.length > 9
+          ? product.name.slice(0, 9) + "..."
           : product?.name}
       </Text>
 

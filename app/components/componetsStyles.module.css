@@ -10,7 +10,6 @@
 }
 
 .containerInput {
-  padding: 20px 0;
   display: flex;
 }
 
@@ -51,7 +50,7 @@
 }
 
 .imgList {
-  height: 100px !important;
+  height: 70px !important;
   width: 100% !important;
   object-fit: contain !important;
 }

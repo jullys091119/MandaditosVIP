@@ -4,8 +4,6 @@ let id = null;
 
 export async function getProducts() {
   const { data, error } = await supabase.from("products").select("*");
-
-  console.log("data", data);
   console.log("error", error);
   if (error || !data) {
     return products;
@@ -54,4 +52,24 @@ export async function showPopularProducts() {
     return data;
   }
 }
+
+export async function searchProducts(text) {
+  if (!text || text.trim() === "") {
+    return []; 
+  }
+
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .ilike("name", `%${text.trim().toLowerCase()}%`);
+
+  if (error) {
+    console.error("Error al buscar productos:", error.message);
+    return [];
+  }
+
+  return data;
+}
+
+
 
